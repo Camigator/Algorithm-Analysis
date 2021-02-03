@@ -1,0 +1,33 @@
+// Cameron O'Neal
+// Ackermann Function
+// C++
+
+#include <iostream> 
+using namespace std; 
+  
+int ackermann(int m, int n) 
+{ 
+    if (m == 0)
+    { 
+        return n + 1; 
+    } 
+    else if((m > 0) && (n == 0))
+    { 
+        return ackermann(m - 1, 1); 
+    } 
+    else if((m > 0) && (n > 0))
+    { 
+        return ackermann(m - 1, ackermann(m, n - 1)); 
+    } 
+    else
+      return 0;
+} 
+  
+// Driver code 
+int main() 
+{ 
+    int A; 
+    A = ackermann(4,2); // intergers can be anything you like if you have a run time stack large enough
+    cout << A << endl; 
+    return 0; 
+} 
